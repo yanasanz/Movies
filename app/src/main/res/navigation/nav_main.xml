@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.yanasanz.movies.ui.FeedFragment"
+        android:label="Популярные"
+        tools:layout="@layout/fragment_feed">
+        <action
+            android:id="@+id/action_feedFragment_to_favouriteFilmsFragment"
+            app:destination="@id/favouriteFilmsFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_filmDetailsFragment"
+            app:destination="@id/filmDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favouriteFilmsFragment"
+        android:name="com.yanasanz.movies.ui.FavouriteFilmsFragment"
+        android:label="Популярные"
+        tools:layout="@layout/fragment_feed">
+        <action
+            android:id="@+id/action_favouriteFilmsFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+        <action
+            android:id="@+id/action_favouriteFilmsFragment_to_filmDetailsFragment"
+            app:destination="@id/filmDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/filmDetailsFragment"
+        android:name="com.yanasanz.movies.ui.FilmDetailsFragment"
+        android:label="Страница фильма"
+        tools:layout="@layout/fragment_film_details"/>
+</navigation>
